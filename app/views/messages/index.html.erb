@@ -15,7 +15,8 @@
 <% b_id = 0 %>
 
 <div class="container messages">
-  <div class="row">
+  <div class="row jscroll data-list">
+  
   <% @data.each do |obj| %>
     <% if current_account.id == obj.account_id %>
       <% if obj.account_id != b_id %>
@@ -53,6 +54,8 @@
       <% end %>
     <% end %>
   <% end %>
+  
+  <%= paginate @data %>
   </div>
 </div>
 
@@ -69,15 +72,28 @@
     $(window).scrollTop(pos.top);
   });
 
-  $(function() {
+$(function() {
+  var pos = $("#<%= @data.last.id %>").offset();
+  $(window).load(function(){
+    $(window).scrollTop(pos.top);
+  });
   $('#app-link').off("click"); // ねんのため
   $('#app-link').on("click", function(evt) {
-    console.log("app-link clicked");
     evt.preventDefault(); // リンク(a tag)のデフォルトの動作を抑止
     evt.stopPropagation(); // eventの伝播を止める
     $(window).scrollTop($(document).height());
   });
+  $(window).on("scroll",function(){
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if((scrollHeight - scrollPosition)/scrollHeight <= 0.05){
+      $('.jscroll').jscroll({
+        autoTrigger: true,
+        padding: -20,
+        contentSelector: '.data-list',
+        nextSelector: 'span.next:last a'
+      });
+    }
+  });
 });
-  
 </script>
-
