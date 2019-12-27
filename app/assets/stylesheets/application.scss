@@ -114,9 +114,18 @@ nav p {
   margin-bottom: 2px;
 }
 
+nav.pagination {
+  display: none;
+}
+
+.jscroll-added .jscroll-inner {
+  width: 100%;
+  padding: 0 15px 0 15px;
+}
+
 
 /* submit */
 #new_message {
   padding: 0 15% 0 23%;
-  height: 50px;
+  height: 100px;
 }
