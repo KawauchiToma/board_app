@@ -3,7 +3,6 @@ class MessagesController < ApplicationController
   before_action :authenticate_account!
 
   def index
-    total = Message.page(params[:page]).per(15).total_pages
     @data = Message.page(params[:page]).per(15).order(created_at: "DESC")
     
     @message = Message.new

@@ -8,7 +8,7 @@
 
 4.times do |n|
   name = Faker::Name.name
-  email = "hogehoge#{n+1}@hoge.com"
+  email = "hogehoge#{n+1}@example.com"
   password = "password"
   Account.create!(email: email,password: password)
 end

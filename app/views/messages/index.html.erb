@@ -48,14 +48,11 @@
 <%= render "messages/submit" %>
 
 <script>
-
-var pos = $("#<%= @data.last.id %>").offset();
 $(window).load(function(){
   $('html,body').scrollTop(0);
 });
 
 $(function() {
-  var pos = $("#<%= @data.last.id %>").offset();
   $(window).load(function(){
     $('html,body').scrollTop(0);
   });
