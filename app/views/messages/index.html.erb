@@ -1,87 +1,70 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a id="app-link" class="font-weight-bold" href="/messages">CHAT APP</a>
-    <ul class="navbar-nav">
-      <li class="navbar-item active mt-2">
-        <p>ユーザ名: <%= current_account.email %></p>
-      </li>
-      <li class="navbar-item mt-1 ">
-        <%= link_to 'ログアウト', destroy_account_session_path, class: "btn btn-light ml-3" %>
-      </li>
-    </ul>
-  </div>
-</nav>
+<%= render "messages/header" %>
 
 <% b_id = 0 %>
 
 <div class="container messages">
+  
+  <%= paginate @data %>
   <div class="row jscroll data-list">
   
   <% @data.each do |obj| %>
+  
     <% if current_account.id == obj.account_id %>
+
       <% if obj.account_id != b_id %>
-      <% b_id = obj.account_id %>
-      <div class="chat-box1 col-12 text-right">
+        <% b_id = obj.account_id %>
+        <div class="chat-box1 col-12 text-right">
           <p><%= obj.created_at.to_s(:datetime_jp) %></p>
-          <div class="chat-hukidashi text-break ">
-            <p class="text-left"  id="<%= obj.id %>" ><%= obj.message %></p>
-          </div>
-      </div>
+          <%= render "messages/hukidashi" , object: obj %>
+        </div>
       <% else %>
-      <div class="chat-box1 col-12 text-right">
-          <div class="chat-hukidashi text-break">
-            <p class="text-left" id="<%= obj.id %>" ><%= obj.message %></p>
-          </div>
-      </div>  
+        <div class="chat-box1 col-12 text-right">
+          <%= render "messages/hukidashi" , object: obj %>
+        </div>  
       <% end %>
+
     <% else %>
+
       <% if obj.account_id != b_id %>
         <div class="chat-box2 col-12">
           <div class="chat-face ">
             <% b_id = obj.account_id %>
           </div>
-            <p><%= obj.account.email %>, <%= obj.created_at.to_s(:datetime_jp) %></p>
-            <div class="chat-hukidashi text-break ">
-              <p class="text-left" id ="<%= obj.id %>"><%= obj.message %></p>
-            </div>
+          <p><%= obj.account.email %>, <%= obj.created_at.to_s(:datetime_jp) %></p>
+          <%= render "messages/hukidashi" , object: obj %>
         </div>
       <% elsif obj.account_id == b_id %>
         <div class="chat-box3 col-12">
-          <div class="chat-hukidashi text-break ">
-            <p class="text-left" id ="<%= obj.id %>"><%= obj.message %></p>
-          </div>
+          <%= render "messages/hukidashi" , object: obj %>
         </div>
       <% end %>
+
     <% end %>
   <% end %>
-  
   <%= paginate @data %>
   </div>
 </div>
 
-<div class="fixed-bottom bg-dark pt-3 ">
-  <%= form_for(@message, url:{controller: "messages",action: "create"}) do |form| %>
-    <p><%= form.text_area :message, class: "form-controller col-10 mt-3", placeholder: "メッセージを入力" %>
-       <%= form.submit "送信" ,id:"button" ,class: "btn btn-light col-1 mb-5 ml-1" %></p>
-  <% end %>
-</div>
+<%= render "messages/submit" %>
 
 <script>
-  var pos = $("#<%= @data.last.id %>").offset();
-  $(window).load(function(){
-    $(window).scrollTop(pos.top);
-  });
+
+var pos = $("#<%= @data.last.id %>").offset();
+$(window).load(function(){
+  $('html,body').scrollTop(0);
+});
 
 $(function() {
   var pos = $("#<%= @data.last.id %>").offset();
   $(window).load(function(){
-    $(window).scrollTop(pos.top);
+    $('html,body').scrollTop(0);
   });
+  
   $('#app-link').off("click"); // ねんのため
   $('#app-link').on("click", function(evt) {
     evt.preventDefault(); // リンク(a tag)のデフォルトの動作を抑止
     evt.stopPropagation(); // eventの伝播を止める
-    $(window).scrollTop($(document).height()) ;
+    $(window).scrollTop(0) ;
   });
   $(window).on("scroll",function(){
     scrollHeight = $(document).height();
@@ -90,7 +73,7 @@ $(function() {
       $('.jscroll').jscroll({
         loadingHtml: '読み込み中',
         autoTrigger: true,
-        padding: 40,
+        padding: 6,
         contentSelector: '.data-list',
         nextSelector: 'span.next:last a'
       });

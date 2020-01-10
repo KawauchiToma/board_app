@@ -112,13 +112,14 @@ nav p {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 2px;
+  white-space: pre-wrap;
 }
 
 nav.pagination {
   display: none;
 }
 
-.jscroll-added .jscroll-inner {
+.jscroll-inner {
   width: 100%;
   padding: 0 15px 0 15px;
 }

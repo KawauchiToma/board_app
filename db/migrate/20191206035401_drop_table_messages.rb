@@ -1,5 +1,5 @@
 class DropTableMessages < ActiveRecord::Migration[5.1]
   def change
-    drop_table :messages
+    #drop_table :messages
   end
 end
