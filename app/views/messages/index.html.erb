@@ -3,8 +3,6 @@
 <% b_id = 0 %>
 
 <div class="container messages">
-  
-  <%= paginate @data %>
   <div class="row jscroll data-list">
   
   <% @data.each do |obj| %>
@@ -45,9 +43,15 @@
   </div>
 </div>
 
+<%= render "layouts/flash_messages" %>
 <%= render "messages/submit" %>
 
 <script>
+
+<% unless @data.last.nil? %> // 今回は使わない
+  var pos = <%= @data.last.id %>;
+<% end %>
+
 $(window).load(function(){
   $('html,body').scrollTop(0);
 });

@@ -15,7 +15,7 @@ end
 
 users = Account.all
 
-20.times do |n|
-  message = Faker::Lorem.sentence
-  users.each {|user| user.messages.create!(message: message)}
-end
+#20.times do |n|
+#  message = Faker::Lorem.sentence
+#  users.each {|user| user.messages.create!(message: message)}
+#end

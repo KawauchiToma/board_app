@@ -1,4 +1,10 @@
 <div class="chat-hukidashi text-break ">
-   <p class="text-left" id ="<%= object.id %>"><%= object.message %></p>
+  <p class="text-left" id ="<%= object.id %>">
+    <%= object.message %>
+    <% if object.picture? %>
+      <%= image_tag object.picture.url  %>
+      <%= link_to "ダウンロード", download_message_path(object.id) %>
+    <% end %>
+  </p>
 </div>
 

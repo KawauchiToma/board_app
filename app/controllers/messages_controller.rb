@@ -4,26 +4,32 @@ class MessagesController < ApplicationController
 
   def index
     @data = Message.page(params[:page]).per(15).order(created_at: "DESC")
-    
-    @message = Message.new
-  end
-
-  def add
     @message = Message.new
   end
 
   def create
-    @message = Message.new message_params
-    @message.account_id = current_account.id
+    @message = current_account.messages.build message_params
     if @message.save 
+      flash[:notice] = 'メッセージが送信されました'
       redirect_to '/messages'
     else
+      flash[:danger] = 'メッセージを入力してください'
       redirect_to '/messages'
     end
   end
 
-  private
-  def message_params
-    params.require(:message).permit(:message)
+  def download
+    @picture = Message.find(params[:id])
+    filepath = @picture.picture.current_path
+    stat = File::stat(filepath)
+    send_file(filepath, :filename => @picture.picture_identifier, :length => stat.size)
   end
+
+  private
+
+  def message_params
+    params.require(:message).permit(:message,:picture)
+  end
+
+
 end
