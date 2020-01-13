@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'faker'
 gem 'carrierwave', '1.2.2'
-gem 'mini_magick', '4.7.0'
+gem 'mini_magick', '4.9.4'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
