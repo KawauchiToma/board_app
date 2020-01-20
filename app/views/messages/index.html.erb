@@ -1,45 +1,51 @@
 <%= render "messages/header" %>
 
 <% b_id = 0 %>
+<div class="row">
 
-<div class="container messages">
-  <div class="row jscroll data-list">
+  <%= render "messages/sidebar", object: @alluser %>
+
+  <div class="messages col-10 ">
+    <div class="row jscroll data-list">
   
-  <% @data.each do |obj| %>
+    <% @data.each do |obj| %>
   
-    <% if current_account.id == obj.account_id %>
+      <% if current_account.id == obj.account_id %>
 
-      <% if obj.account_id != b_id %>
-        <% b_id = obj.account_id %>
-        <div class="chat-box1 col-12 text-right">
-          <p><%= obj.created_at.to_s(:datetime_jp) %></p>
-          <%= render "messages/hukidashi" , object: obj %>
-        </div>
-      <% else %>
-        <div class="chat-box1 col-12 text-right">
-          <%= render "messages/hukidashi" , object: obj %>
-        </div>  
-      <% end %>
-
-    <% else %>
-
-      <% if obj.account_id != b_id %>
-        <div class="chat-box2 col-12">
-          <div class="chat-face ">
-            <% b_id = obj.account_id %>
+        <% if obj.account_id != b_id %>
+          <% b_id = obj.account_id %>
+          <div class="chat-box1 col-12 text-right">
+            <p><%= obj.created_at.to_s(:datetime_jp) %></p>
+            <%= render "messages/hukidashi" , object: obj %>
           </div>
-          <p><%= obj.account.email %>, <%= obj.created_at.to_s(:datetime_jp) %></p>
-          <%= render "messages/hukidashi" , object: obj %>
-        </div>
-      <% elsif obj.account_id == b_id %>
-        <div class="chat-box3 col-12">
-          <%= render "messages/hukidashi" , object: obj %>
-        </div>
-      <% end %>
+        <% else %>
+          <div class="chat-box1 col-12 text-right">
+            <%= render "messages/hukidashi" , object: obj %>
+          </div>  
+        <% end %>
 
+      <% else %>
+
+        <% if obj.account_id != b_id %>
+          <div class="chat-box2 col-12">
+            <div class="chat-face ">
+              <% b_id = obj.account_id %>
+            </div>
+            <p><%= obj.account.email %>, <%= obj.created_at.to_s(:datetime_jp) %></p>
+            <%= render "messages/hukidashi" , object: obj %>
+          </div>
+        <% elsif obj.account_id == b_id %>
+          <div class="chat-box3 col-12">
+            <%= render "messages/hukidashi" , object: obj %>
+          </div>
+        <% end %>
+  
+      <% end %>
     <% end %>
-  <% end %>
-  <%= paginate @data %>
+
+    <%= paginate @data %>
+
+    </div>
   </div>
 </div>
 

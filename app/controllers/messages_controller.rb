@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
 
   def index
     @data = Message.page(params[:page]).per(15).order(created_at: "DESC")
+    @alluser = Account.all
     @message = Message.new
   end
 

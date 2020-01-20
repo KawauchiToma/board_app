@@ -12,8 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require bootstrap_sb_admin_base_v2
  */
 @import "bootstrap";
+//@import "metisMenu.min";
+//@import "timeline";
+//@import "sb-admin-2";
+//@import "morris-0.4.3.min";
+//@import "font-awesome";
+
 
 
 /* header */
@@ -25,6 +33,20 @@ nav a {
 nav p {
   color: white;
 }
+
+/* side-bar */
+.side-bar {
+  background-color: #DCDCDC;
+  h2 {
+    margin-bottom: 2em;
+  }
+
+  p {
+    border-bottom: 1px solid black;
+    margin-bottom: 3em;
+  }
+}
+
 
 /* チャットレイアウト */
 
