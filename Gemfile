@@ -62,4 +62,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem 'kaminari'
-gem 'bootstrap_sb_admin_base_v2'

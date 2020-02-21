@@ -1,11 +1,11 @@
-<%= render "messages/header" %>
 
 <% b_id = 0 %>
-<div class="row">
 
-  <%= render "messages/sidebar", object: @alluser %>
-
-  <div class="messages col-10 ">
+<div id="wrapper">
+  <%= render "messages/sidebar" %>
+  
+  <div class="messages  d-flex flex-column col-9 " id="content-wrapper">
+    <%= render "messages/header" %>
     <div class="row jscroll data-list">
   
     <% @data.each do |obj| %>
@@ -49,7 +49,6 @@
   </div>
 </div>
 
-<%= render "layouts/flash_messages" %>
 <%= render "messages/submit" %>
 
 <script>

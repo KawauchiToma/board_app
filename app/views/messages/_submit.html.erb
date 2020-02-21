@@ -1,10 +1,10 @@
-<div class="fixed-bottom bg-dark pt-2 ">
+<div class="bottom-submit fixed-bottom bg-gray-300 pt-2">
   <%= form_for(@message, url:{controller: "messages",action: "create"}) do |form| %>
     <span class="picture"> 
        <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
     <p><%= form.text_area :message, class: "form-controller col-9 mt-2", placeholder: "メッセージを入力" %>
-       <%= form.submit "送信" ,id:"button" ,class: "btn btn-light col-1 mb-5 ml-1" %></p>
+       <%= form.submit "送信" ,id:"button" ,class: "btn btn-dark col-1 mb-5 ml-1" %></p>
   <% end %>
 </div>
 

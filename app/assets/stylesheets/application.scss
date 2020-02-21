@@ -12,53 +12,66 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
- *= require bootstrap_sb_admin_base_v2
  */
 @import "bootstrap";
-//@import "metisMenu.min";
-//@import "timeline";
-//@import "sb-admin-2";
-//@import "morris-0.4.3.min";
-//@import "font-awesome";
+@import "sb-admin-2";
+@import "css/all.min";
+@import "css/solid";
+@import "css/fontawesome";
+@import "css/brands";
+@import "css/regular";
+@import "font-awesome";
 
 
 
 /* header */
 nav a {
-  color: white;
+  color: gray;
   font-size: 1.7em;
 }
 
 nav p {
-  color: white;
+  color: black;
+}
+
+nav {
+  margin-left: 359px;
+}
+
+nav.navbar {
+  border: 1px solid gray;
 }
 
 /* side-bar */
-.side-bar {
-  background-color: #DCDCDC;
-  h2 {
-    margin-bottom: 2em;
-  }
 
+div ul.user-box  {
+  padding-left: 0;
+  ol {
+    padding-left: 0;
+  }
   p {
-    border-bottom: 1px solid black;
-    margin-bottom: 3em;
+    color: black;
+    font-size: 22px;
+  }
+  span {
+    color: black;
   }
 }
 
-
+.sidebar {
+  border-right: 1px solid gray;
+}
 /* チャットレイアウト */
 
 .messages {
-  margin-top: 65px;
-  margin-bottom: 150px;
   width: 75%;
+  margin-bottom: 130px;
 }
 
 
 .chat-box1  {
   //word-wrap: break-word;
+  padding: 0 30px 0 30px;
 }
 
 
@@ -80,6 +93,7 @@ nav p {
   //width: 100%;
   //height: auto;
   //overflow: hidden;
+  padding: 0 30px 0 30px;
 }
 
 
@@ -104,7 +118,7 @@ nav p {
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 10px 10px 0px 10px;
-  background-color: #BCF5A9;
+  background-color: #CCFFFF;
   
 }
 
@@ -116,7 +130,7 @@ nav p {
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 0 10px 10px 10px;
-  background-color: #D9F0FF;
+  background-color: #EEEEEE;
 }
 
 .chat-box3 .chat-hukidashi {
@@ -127,7 +141,7 @@ nav p {
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 0 10px 10px 10px;
-  background-color: #D9F0FF;
+  background-color: #EEEEEE;
 }
 
 .chat-hukidashi p {
@@ -151,6 +165,11 @@ nav.pagination {
 #new_message {
   padding: 0 15% 0 23%;
   height: 100px;
+}
+
+.bottom-submit {
+  margin-left: 359px;
+  border: 1px solid gray;
 }
 
 .picture {

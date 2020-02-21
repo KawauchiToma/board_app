@@ -1,6 +1,10 @@
-<div class="side-bar col-2 ">
-  <h2>ユーザー一覧</h2>
-  <% object.each do |user| %>
-    <p><%= user.email %>
-  <% end %>
+<div class="navbar-nav bg-gray-200 sidebar sidebar-dark accordion col-3" id="accordionSidebar ">
+  <ul class="user-box">
+    <p class="sidebar-user fas fa-laugh-wink mt-3"> 登録ユーザ一覧</p>
+    <% @alluser.each do |user| %>
+      <ol style= "margin: 20px 0 20px 0;border-bottom: 1px solid gray">
+        <span><%= user.email %></span>
+      </ol>
+    <% end %>
+  </ul>
 </div>

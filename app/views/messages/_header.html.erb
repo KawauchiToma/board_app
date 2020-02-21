@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top mb-0">
+<nav class="navbar navbar-expand-md navbar-dark bg-gray-300 topbar fixed-top  mb-0">
   <div class="container">
-    <a id="app-link" class="font-weight-bold" href="/messages">CHAT APP</a>
+    <a id="app-link" class="font-weight-bold fas fa-laugh-wink" href="/messages"> CHAT APP</a>
     <ul class="navbar-nav ml-auto">
       <li class="navbar-item active mt-2">
         <p>ユーザ名: <%= current_account.email %></p>
       </li>
       <li class="navbar-item mt-1 ">
-        <%= link_to 'ログアウト', destroy_account_session_path, class: "btn btn-light ml-3" %>
+        <%= link_to 'ログアウト', destroy_account_session_path, class: "btn btn-dark ml-3" %>
       </li>
     </ul>
   </div>

@@ -18,4 +18,4 @@
 //= require_tree .
 //= require popper
 //= require bootstrap-sprockets
-//= require bootstrap_sb_admin_base_v2
+//= require sb-admin-2.js
