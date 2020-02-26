@@ -35,11 +35,13 @@ nav p {
 }
 
 nav {
-  margin-left: 359px;
+  width: 75%;
+  margin-left: 25%;
 }
 
 nav.navbar {
-  border: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 
 /* side-bar */
@@ -58,14 +60,19 @@ div ul.user-box  {
   }
 }
 
-.sidebar {
-  border-right: 1px solid gray;
+.sidebar1 {
+  position: fixed;
+  border: 1px solid gray;
+  padding: 0 12px 0 12px;
+  width: 25%;
+  height: 100%;
 }
 /* チャットレイアウト */
 
 .messages {
-  width: 75%;
-  margin-bottom: 130px;
+  padding-bottom: 130px;
+  padding-top: 80px;
+  padding-left: 25%;
 }
 
 
@@ -114,7 +121,7 @@ div ul.user-box  {
 .chat-box1 .chat-hukidashi {
   display: inline-block;
   max-width: 80%;
-  padding: 15px 20px 10px 20px;
+  padding: 0px 5px 0px 5px;
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 10px 10px 0px 10px;
@@ -125,7 +132,7 @@ div ul.user-box  {
 .chat-box2 .chat-hukidashi {
   display: inline-block;
   max-width: 80%;
-  padding: 15px 20px 10px 20px;
+  padding: 0px 5px 0px 5px;
   margin-left: 10px;
   margin-top: 3px;
   margin-bottom: 3px;
@@ -136,8 +143,8 @@ div ul.user-box  {
 .chat-box3 .chat-hukidashi {
   display: inline-block;
   max-width: 80%;
-  padding: 15px 20px 10px 20px;
-  margin-left: 70px;
+  padding: 0px 5px 0px 5px;
+  margin-left: 87px;
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 0 10px 10px 10px;
@@ -149,6 +156,7 @@ div ul.user-box  {
   margin-top: 0;
   margin-bottom: 2px;
   white-space: pre-wrap;
+  color: black;
 }
 
 nav.pagination {
@@ -168,8 +176,10 @@ nav.pagination {
 }
 
 .bottom-submit {
-  margin-left: 359px;
-  border: 1px solid gray;
+  margin-left: 25%;
+  width: 75%;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 
 .picture {
