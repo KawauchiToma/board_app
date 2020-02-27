@@ -24,7 +24,6 @@ class MessagesController < ApplicationController
     filepath = @picture.picture.current_path
     stat = File::stat(filepath)
     send_file(filepath, :filename => @picture.picture_identifier, :length => stat.size)
-    redirect_to '/messages'
   end
 
   private
