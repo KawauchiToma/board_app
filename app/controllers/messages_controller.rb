@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   def create
     @message = current_account.messages.build message_params
     if @message.save 
-      flash[:notice] = 'メッセージが送信されました'
+      flash[:success] = 'メッセージが送信されました'
       redirect_to '/messages'
     else
       flash[:danger] = 'メッセージを入力してください'

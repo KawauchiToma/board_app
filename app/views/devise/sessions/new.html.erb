@@ -1,28 +1,40 @@
-<div class="mx-auto pt-5 mt-5" style="width: 350px;">
-  <h3 class="mt-1 mb-3">ログイン</h3>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-group">
-      <%= f.label :email,"メールアドレス" , class: "form-label"%><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-    </div>
 
-    <div class="form-group">
-      <%= f.label :password,"パスワード",  class: "form-label" %><br />
-      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+<div class="card mb-3 container " style="max-width: 70%; margin-top: 15%">
+  <div class="row no-gutters justify-content-center">
+    <div class="col-md-6 d-lg-block d-none bg-login-image">
     </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title text-center">ログイン</h5>
+        <div class="mx-auto pt-2" style="width: 350px;">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'user'}) do |f| %>
+          <div class="form-group">
+            <%= f.label :email,"メールアドレス" , class: "form-label"%><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user" %>
+          </div>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="form-check">
-        <%= f.check_box :remember_me, class: "form-check-input" %>
-        <%= f.label :remember_me,"ログインを記憶", class: "form-check-label" %>
+          <div class="form-group">
+            <%= f.label :password,"パスワード",  class: "form-label" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-user" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="form-check">
+              <%= f.check_box :remember_me, class: "form-check-input" %>
+              <%= f.label :remember_me,"ログインを記憶", class: "form-check-label" %>
+            </div>
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit "ログイン",class: "btn btn-primary btn-user btn-block" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+
       </div>
-    <% end %>
 
-    <div class="actions">
-      <%= f.submit "ログイン",class: "btn btn-primary btn-block" %>
+      </div>
     </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-
+  </div>
 </div>
