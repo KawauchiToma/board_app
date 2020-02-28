@@ -1,10 +1,8 @@
 <div class="navbar-nav bg-gray-200 sidebar1 sidebar-dark accordion" id="accordionSidebar ">
-  <ul class="user-box">
+  <ul class="user-box list-group">
     <p class="sidebar-user fas fa-laugh-wink mt-3 badge badge-pill badge-light">登録ユーザ一覧</p>
     <% @alluser.each do |user| %>
-      <ol style= "margin: 20px 0 20px 0;border-bottom: 1px solid gray">
-        <span><%= user.email %></span>
-      </ol>
+      <li class="list-group-item"><%= user.email %></li>
     <% end %>
   </ul>
 </div>

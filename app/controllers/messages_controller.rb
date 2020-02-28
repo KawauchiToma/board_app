@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  layout 'application'
+  layout 'messages'
   before_action :authenticate_account!
 
   def index

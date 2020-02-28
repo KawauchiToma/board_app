@@ -1,39 +1,42 @@
-
-<div class="card mb-3 container " style="max-width: 70%; margin-top: 15%">
-  <div class="row no-gutters justify-content-center">
-    <div class="col-md-6 d-lg-block d-none bg-login-image">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title text-center">ログイン</h5>
-        <div class="mx-auto pt-2" style="width: 350px;">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'user'}) do |f| %>
-          <div class="form-group">
-            <%= f.label :email,"メールアドレス" , class: "form-label"%><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password,"パスワード",  class: "form-label" %><br />
-            <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-user" %>
-          </div>
-
-          <% if devise_mapping.rememberable? %>
-            <div class="form-check">
-              <%= f.check_box :remember_me, class: "form-check-input" %>
-              <%= f.label :remember_me,"ログインを記憶", class: "form-check-label" %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+          <div class="row">
+            <div id="example-3" class="carousel slide col-lg-6" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#example-3" data-slide-to="0" class="active"></li>
+                <li data-target="#example-3" data-slide-to="1"></li>
+                <li data-target="#example-3" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <%= image_tag 'dog1.jpg' , :size =>'500x480'%>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag 'dog23.jpg' , :size =>'500x480'%>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag 'dog3.jpg' , :size =>'500x480'%>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#example-3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#example-3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-          <% end %>
-
-          <div class="actions">
-            <%= f.submit "ログイン",class: "btn btn-primary btn-user btn-block" %>
+            <div class="col-lg-6">
+              <div class="p-5">
+                <%= render 'login' %>
+              </div>
+            </div>
           </div>
-        <% end %>
-
-        <%= render "devise/shared/links" %>
-
-      </div>
-
+        </div>
       </div>
     </div>
   </div>

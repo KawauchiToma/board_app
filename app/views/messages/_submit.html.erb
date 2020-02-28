@@ -1,5 +1,5 @@
 <div class="bottom-submit fixed-bottom bg-gray-300 pt-2">
-  <%= form_for(@message, url:{controller: "messages",action: "create"}) do |form| %>
+  <%= form_for(@message, url:{controller: "messages",action: "create"},html: {class: 'user'}) do |form| %>
     <span class="picture"> 
        <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
