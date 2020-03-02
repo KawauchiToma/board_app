@@ -1,10 +1,10 @@
 
 <% b_id = 0 %>
 
-<div id="wrapper" style="position: relative;width: 100%">
+<div class="flex-md-wrap row"  style="position: relative;">
   <%= render "messages/sidebar" %>
   
-  <div class="messages  d-flex flex-column" id="content-wrapper">
+  <div class="messages  d-flex flex-column col-12 col-md-9" id="content-wrapper">
     <%= render "messages/header" %>
     <%= render "layouts/flash_messages" %>
     <div class="row jscroll data-list">
@@ -47,10 +47,10 @@
     <%= paginate @data %>
 
     </div>
+    <%= render "messages/submit" %>
   </div>
 </div>
 
-<%= render "messages/submit" %>
 
 <script>
 

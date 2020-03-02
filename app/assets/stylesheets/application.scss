@@ -22,6 +22,26 @@
 @import "css/regular";
 @import "font-awesome";
 
+/* style */
+$pc: 1024px; // PC
+$tab: 768px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
 
 
 /* header */
@@ -35,14 +55,25 @@ nav p {
 }
 
 nav {
-  width: 75%;
-  margin-left: 25%;
+  z-index: 1000;
+  @include pc {
+    width: 100%;
+  };
+  @include tab {
+    width: 100wh;
+  };
+  @include sp {
+    width: 100wh;
+  };
 }
 
 nav.navbar {
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+  position: sticky;
+  top: 0;
 }
+
 
 /* side-bar */
 
@@ -61,18 +92,30 @@ div ul.user-box  {
 }
 
 .sidebar1 {
-  position: fixed;
-  border: 1px solid gray;
-  padding: 0 12px 0 12px;
-  width: 25%;
-  height: 100%;
+    position: sticky;
+    top: 0;
+    border: 1px solid gray;
+    padding: 0 12px 0 12px;
+    z-index: 1000;
+  @include pc {
+    height: 100vh;
+  };
+  @include tab {
+    height: 20vh;
+  };
+  @include sp {
+    height: 20vh;
+  };
 }
+
+
 /* チャットレイアウト */
 
 .messages {
-  padding-bottom: 130px;
-  padding-top: 80px;
-  padding-left: 25%;
+  //padding-bottom: 130px;
+  //padding-top: 80px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
@@ -176,10 +219,19 @@ nav.pagination {
 }
 
 .bottom-submit {
-  margin-left: 25%;
-  width: 75%;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+  position: sticky;
+  bottom: 0;
+  @include pc {
+    width: 100%;
+  };
+  @include tab {
+    width: 100wh;
+  };
+  @include sp {
+    width: 100wh;
+  };
 }
 
 .picture {
