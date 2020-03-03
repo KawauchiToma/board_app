@@ -28,7 +28,7 @@ $tab: 768px; // タブレット
 $sp: 480px;  // スマホ
 
 @mixin pc {
-  @media (min-width: ($tab)) {
+  @media (min-width: ($pc)) {
     @content;
   }
 }
@@ -74,6 +74,25 @@ nav.navbar {
   top: 0;
 }
 
+/*
+
+.bd-navbar {
+  @include pc {
+    height: 4.375rem;
+  };
+  @include tab {
+    height: 5rem;
+  };
+  @include sp {
+    height: 5rem;
+  };
+}
+*/
+
+nav ul {
+  display: block;
+}
+
 
 /* side-bar */
 
@@ -99,12 +118,15 @@ div ul.user-box  {
     z-index: 1000;
   @include pc {
     height: 100vh;
+    width: 400px;
   };
   @include tab {
     height: 20vh;
+    width: 100wh;
   };
   @include sp {
     height: 20vh;
+    width: 100wh;
   };
 }
 
@@ -112,10 +134,17 @@ div ul.user-box  {
 /* チャットレイアウト */
 
 .messages {
-  //padding-bottom: 130px;
-  //padding-top: 80px;
   padding-left: 0;
   padding-right: 0;
+  @include pc {
+    width: calc(100% - 400px);
+  };
+  @include tab {
+    width: 100wh;
+  };
+  @include sp {
+    width: 100wh;
+  };
 }
 
 

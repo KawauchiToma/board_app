@@ -1,12 +1,10 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-gray-300 topbar  mb-0">
-  <div class="container">
-    <a id="app-link" class="font-weight-bold fas fa-laugh-wink" href="/messages"> CHAT APP</a>  
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu1" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
-
-  <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-md navbar-light mb-0 bd-navbar" style="background-color: #e3f2fd;">
+  <a id="app-link" class="font-weight-bold fas fa-laugh-wink navbar-brand" href="/messages"> CHAT APP</a>  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
   </button>
-
-    <ul class="navbar-nav ml-auto collapse navbar-collapse " id="navmenu1">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav ml-md-auto">
       <li class="navbar-item active mt-2">
         <p>ユーザ名: <%= current_account.email %></p>
       </li>
