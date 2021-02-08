@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'faker'
-gem 'carrierwave', '1.2.2'
+gem 'carrierwave', '1.3.2'
 gem 'mini_magick', '4.7.0'
 
 # Use CoffeeScript for .coffee assets and views
